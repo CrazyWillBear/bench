@@ -1,5 +1,5 @@
 # bench
-A Windows benchmarking tool coded in Rust. It is lightweight, fast, and efficient.
+A cross-platform benchmarking tool coded in Rust. It is lightweight, fast, and efficient.
 
 ## Features
 - Tells how long (in milliseconds) a program takes to complete
