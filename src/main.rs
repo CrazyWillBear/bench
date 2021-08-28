@@ -1,7 +1,7 @@
 use stopwatch;
 
 use std::{env, io};
-use std::process::Command;
+use std::process::{Command, Stdio};
 use stopwatch::Stopwatch;
 use std::io::Write;
 
@@ -14,10 +14,11 @@ fn main() {
     println!("\x1b[0;32m-Running '{}':\x1b[0;0m\n-=-=-=-", args[1]);
     let output = Command::new(&args[1])
         .args(program_args)
+        .stdout(Stdio::inherit())
+        .stderr(Stdio::inherit())
+        .stdin(Stdio::inherit())
         .output()
-        .expect("failed to execute process");
-    io::stdout().write(&output.stdout).unwrap();
-    io::stdout().write(&output.stderr).unwrap();
+        .expect("failed to run command");
 
     sw.stop();
 
