@@ -1,9 +1,8 @@
 use stopwatch;
 
-use std::{env, io};
+use std::env;
 use std::process::{Command, Stdio};
 use stopwatch::Stopwatch;
-use std::io::Write;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
