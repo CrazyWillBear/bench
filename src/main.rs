@@ -1,4 +1,5 @@
 use std::env;
+use std::process;
 use std::process::{Command, Stdio};
 use stopwatch::Stopwatch;
 use sysinfo::{ProcessorExt, System, SystemExt};
@@ -6,6 +7,10 @@ use sysinfo::{ProcessorExt, System, SystemExt};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        eprintln!("Error: Not enough arguments provided!");
+        process::exit(1);
+    }
     let program_args: Vec<String> = args[2..args.len()].to_vec();
     let mut sys = System::new_all();
 
