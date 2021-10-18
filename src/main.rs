@@ -54,6 +54,6 @@ fn main() {
     println!("-Ran '{}':", &args[1]);
     println!("     -{} ms", sw.elapsed_ms());
     println!("     -memory usage: {}mb", ((end_memory_used - init_memory_used) as f32 / 1000.00)); // the memory used is the difference between the amount of memory used before and after the program was run.
-    println!("     -cpu usage: {}%", (end_cpu_usage - init_cpu_usage) as i32); // the CPU usage is the difference between the CPU usage before ad after the program was run.
+    println!("     -cpu usage: {}%", (end_cpu_usage - init_cpu_usage) as i32); // the CPU usage is the difference between the CPU usage before and after the program was run.
     println!("     -{}\x1b[0;0m", &proc.status);
 }
